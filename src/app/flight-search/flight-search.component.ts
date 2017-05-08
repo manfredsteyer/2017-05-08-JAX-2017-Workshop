@@ -26,7 +26,7 @@ import { BASE_URL } from '../app.tokens';
 @Component({
   selector: 'flight-search',
   templateUrl: './flight-search.component.html',
-  providers: [FlightService]
+  providers: []
 })
 export class FlightSearchComponent {
 

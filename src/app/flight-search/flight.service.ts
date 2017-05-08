@@ -31,4 +31,36 @@ export class FlightService {
             .map(r => r.json());
 
   }
+
+  findById(id: string): Observable<Flight> {
+    let url = this.baseUrl + '/flight';
+
+    let headers = new Headers()
+    headers.set('Accept', 'application/json');
+
+    let search = new URLSearchParams();
+    search.set('id', id);
+
+    return this
+      .http
+      .get(url, { headers, search })
+      .map(r => r.json());
+
+  }
+
+
+  save(flight: Flight): Observable<Flight> {
+    let url = this.baseUrl + '/flight';
+
+    let headers = new Headers()
+    headers.set('Accept', 'application/json');
+
+    return this
+      .http
+      .post(url, flight, { headers })
+      .map(r => r.json());
+
+  }
+
+
 }
